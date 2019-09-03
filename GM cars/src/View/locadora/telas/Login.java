@@ -5,6 +5,7 @@
  */
 package locadora.telas;
 
+import Controller.LoginController;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -149,7 +150,10 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        TelaInicialGer telager = new TelaInicialGer();
+        Login l = new Login(); //model
+        TelaInicialGer telager = new TelaInicialGer(); //view
+        LoginController lc = new LoginController();// controller
+        
         
         String usuario = txtUsuario.getText(); 
         String senha = txtSenha.getText();
