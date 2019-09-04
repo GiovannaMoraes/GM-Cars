@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.Entrada;
+
 /**
  *
  * @author aluno

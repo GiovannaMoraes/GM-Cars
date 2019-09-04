@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.telas;
+package view.locadora.telas;
 
-import locadora.read.ReadOrc;
-import locadora.read.ReadCli;
-import locadora.read.ReadCar;
-import locadora.create.CreateCli;
-import locadora.create.CreateOrc;
-import locadora.create.CreateCar;
+import view.locadora.read.ReadOrc;
+import view.locadora.read.ReadCli;
+import view.locadora.read.ReadCar;
+import view.locadora.create.CreateCli;
+import view.locadora.create.CreateOrc;
+import view.locadora.create.CreateCar;
 
 /**
  *

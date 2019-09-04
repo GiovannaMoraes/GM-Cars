@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.create;
+package view.locadora.create;
 
+import Controller.CarrosController;
 import Model.Carros;
 import Model.Hist_oficina;
-import locadora.avisos.CadUp;
-import locadora.telas.TelaInicialGer;
+import view.locadora.avisos.CadUp;
+import view.locadora.telas.TelaInicialGer;
 
 /**
  *
@@ -299,13 +300,25 @@ public class CreateCar extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Carros c = new Carros(); 
-        c.setAno(txtAno);//model
+        Carros c = new Carros();
+        c.setMarca(txtMarca.getText());
+        c.setModelo(txtModelo.getText());
+        c.setCor(txtCor.getText());
+        c.setAno(txtAno.getText());
+        c.setCombustivel(txtCombustivel.getText());
+        c.setPlaca(txtPlaca.getText());
+        c.setChassi(txtChassi.getText());//model carro
+        
         Hist_oficina ho = new Hist_oficina(); 
+        // .......... (pegar valores da tabela) model historico da oficina
+        
         CadUp cadup = new CadUp(); //view
         cadup.setVisible(true);
         
         this.setVisible(false);
+        
+        CarrosController cc = new CarrosController();
+        cc.insert(c);//controller
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed

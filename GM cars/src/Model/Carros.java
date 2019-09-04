@@ -12,7 +12,7 @@ package Model;
 public class Carros {
     
     private int id_carro, ano;
-    private String categoria, marca, modelo, cor, placa;
+    private String categoria, marca, modelo, cor, placa, combustivel, chassi;
     
      public void setId_carro(int _i) throws Exception {
         
@@ -73,6 +73,21 @@ public class Carros {
     
     public String getPlaca() {
         return this.placa;
+    }
+    public void setCombustivel(String _co) {
+            this.combustivel = _co;   
+    }
+    
+    public String getCombustivel() {
+        return this.combustivel;
+    }
+    
+    public void setChassi(String _chassi) {
+            this.chassi = _chassi;   
+    }
+    
+    public String getChassi() {
+        return this.chassi;
     }
     
 }

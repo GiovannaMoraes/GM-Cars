@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.telas;
+package view.locadora.telas;
 
-import locadora.financas.FinCaixa;
-import locadora.financas.FinEntrada;
-import locadora.financas.FinSaída;
-import locadora.read.ReadOrc;
-import locadora.read.ReadFunc;
-import locadora.read.ReadCli;
-import locadora.read.ReadCar;
-import locadora.create.CreateCli;
-import locadora.create.CreateOrc;
-import locadora.create.CreateFunc;
-import locadora.create.CreateCar;
+import view.locadora.financas.FinCaixa;
+import view.locadora.financas.FinEntrada;
+import view.locadora.financas.FinSaída;
+import view.locadora.read.ReadOrc;
+import view.locadora.read.ReadFunc;
+import view.locadora.read.ReadCli;
+import view.locadora.read.ReadCar;
+import view.locadora.create.CreateCli;
+import view.locadora.create.CreateOrc;
+import view.locadora.create.CreateFunc;
+import view.locadora.create.CreateCar;
 
 /**
  *

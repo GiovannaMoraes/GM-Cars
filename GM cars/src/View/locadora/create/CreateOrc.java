@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.create;
+package view.locadora.create;
 
-import locadora.avisos.CadUp;
-import locadora.telas.TelaInicialGer;
+import view.locadora.avisos.CadUp;
+import view.locadora.telas.TelaInicialGer;
 
 /**
  *

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.read;
+package view.locadora.read;
 
-import locadora.edit.EditFunc;
-import locadora.telas.TelaInicialGer;
+import view.locadora.edit.EditFunc;
+import view.locadora.telas.TelaInicialGer;
 
 /**
  *

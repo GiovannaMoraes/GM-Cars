@@ -12,7 +12,7 @@ package Model;
 public class Clientes {
     
     private int id_cliente, numero;
-    private String nome, cpf, rg, cnh, rua, bairro, cidade, estado, cep ;
+    private String nome, datanascimento, cpf, rg, cnh, rua, bairro, cidade, estado, cep ;
     
     public void setId_cliente(int _i) throws Exception {
         
@@ -33,6 +33,14 @@ public class Clientes {
     
     public String getNome() {
         return this.nome;
+    }
+    
+    public void setDatanascimento(String _datanasc) {
+            this.datanascimento = _datanasc;   
+    }
+    
+    public String getDatanascimento() {
+        return this.datanascimento;
     }
     
     public void setCpf(String _cpf) {

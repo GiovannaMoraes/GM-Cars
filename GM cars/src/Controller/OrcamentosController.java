@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.Orcamentos;
+
 /**
  *
  * @author aluno

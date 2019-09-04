@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.edit;
+package view.locadora.edit;
 
 import javax.swing.JOptionPane;
-import locadora.avisos.CadDel;
-import locadora.telas.TelaInicialGer;
+import view.locadora.avisos.CadDel;
+import view.locadora.telas.TelaInicialGer;
 
 /**
  *

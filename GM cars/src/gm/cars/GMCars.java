@@ -5,7 +5,7 @@
  */
 package gm.cars;
 
-import locadora.telas.Login;
+import view.locadora.telas.Login;
 
 /**
  *

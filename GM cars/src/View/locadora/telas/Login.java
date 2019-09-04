@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadora.telas;
+package view.locadora.telas;
 
 import Controller.LoginController;
 import javax.swing.JOptionPane;
