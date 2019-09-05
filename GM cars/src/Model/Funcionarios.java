@@ -12,7 +12,7 @@ package Model;
 public class Funcionarios {
     
     private int id_funcionario, numero;
-    private String nome, cargo, cpf, rg, rua, bairro, cidade, estado, cep ;
+    private String nome, cargo, cpf, rg, rua, bairro, cidade, estado, cep, datanascimento, formacao ;
     
     public void setId_funcionario(int _i) throws Exception {
         
@@ -33,6 +33,22 @@ public class Funcionarios {
     
     public String getNome() {
         return this.nome;
+    }
+    
+    public void setDatanascimento(String _datanasc) {
+            this.datanascimento = _datanasc;   
+    }
+    
+    public String getDatanascimento() {
+        return this.datanascimento;
+    }
+    
+    public void setFormacao(String _f) {
+            this.formacao = _f;   
+    }
+    
+    public String getFormacao() {
+        return this.formacao;
     }
     
     public void setCargo(String _c) {

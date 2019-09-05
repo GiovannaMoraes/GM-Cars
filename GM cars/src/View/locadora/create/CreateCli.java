@@ -7,6 +7,7 @@ package view.locadora.create;
 
 import Controller.ClientesController;
 import Model.Clientes;
+import Model.Clientes_telefones;
 import view.locadora.avisos.CadUp;
 import view.locadora.telas.TelaInicialGer;
 
@@ -47,8 +48,9 @@ public class CreateCli extends javax.swing.JFrame {
         txtRg = new javax.swing.JTextField();
         txtCpf = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
+        txtNumerotelefone = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        txtDdd = new javax.swing.JTextField();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel8 = new javax.swing.JLabel();
         txtCnh = new javax.swing.JTextField();
@@ -97,6 +99,12 @@ public class CreateCli extends javax.swing.JFrame {
 
         jLabel7.setText("Data de nascimento");
 
+        txtDdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDddActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,13 +134,24 @@ public class CreateCli extends javax.swing.JFrame {
                                         .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4))))
                             .addComponent(jLabel3))
-                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel5)
+                                        .addGap(21, 21, 21))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addComponent(txtNumerotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +170,8 @@ public class CreateCli extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumerotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -319,7 +339,7 @@ public class CreateCli extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -331,7 +351,7 @@ public class CreateCli extends javax.swing.JFrame {
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43))
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,15 +384,19 @@ public class CreateCli extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         
+        try {
+                  
         Clientes cli = new Clientes();
+        Clientes_telefones cli_t = new Clientes_telefones();
         cli.setNome(txtNome.getText());
         cli.setRg(txtNome.getText());
         cli.setCpf(txtNome.getText());
         cli.setCnh(txtNome.getText());
         cli.setDatanascimento(txtDatanascimento.getText());
-        cli.setTelefone(txtTelefone.getText()); //tabela auxiliar, campo multivalorado, o que fazer?
+        cli_t.setDdd(txtDdd.getText());
+        cli_t.setNumero(txtNumerotelefone.getText()); 
         cli.setRua(txtRua.getText());
-        cli.setNumero(txtNumero.getText()); //conversão de string para int, como fazer?
+        cli.setNumero(Integer.parseInt(txtNumero.getText())); //conversão de string para int
         cli.setBairro(txtBairro.getText());
         cli.setCidade(txtCidade.getText());
         cli.setEstado(txtEstado.getText());
@@ -388,7 +412,15 @@ public class CreateCli extends javax.swing.JFrame {
         
         ClientesController clic = new ClientesController();
         clic.insert(cli);//controller
+        
+        } catch (Exception e){
+            
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtDddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -459,11 +491,12 @@ public class CreateCli extends javax.swing.JFrame {
     private javax.swing.JTextField txtCnh;
     private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtDatanascimento;
+    private javax.swing.JTextField txtDdd;
     private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtNumerotelefone;
     private javax.swing.JTextField txtRg;
     private javax.swing.JTextField txtRua;
-    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

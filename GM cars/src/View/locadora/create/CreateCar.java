@@ -300,25 +300,33 @@ public class CreateCar extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Carros c = new Carros();
-        c.setMarca(txtMarca.getText());
-        c.setModelo(txtModelo.getText());
-        c.setCor(txtCor.getText());
-        c.setAno(txtAno.getText());
-        c.setCombustivel(txtCombustivel.getText());
-        c.setPlaca(txtPlaca.getText());
-        c.setChassi(txtChassi.getText());//model carro
         
-        Hist_oficina ho = new Hist_oficina(); 
-        // .......... (pegar valores da tabela) model historico da oficina
+        try {            
         
-        CadUp cadup = new CadUp(); //view
-        cadup.setVisible(true);
+            Carros c = new Carros();
+            c.setCategoria(txtCategoria.getSelectedItem().toString());
+            c.setMarca(txtMarca.getText());
+            c.setModelo(txtModelo.getText());
+            c.setCor(txtCor.getText());
+            c.setAno(Integer.parseInt(txtAno.getText()));
+            c.setCombustivel(txtCombustivel.getText());
+            c.setPlaca(txtPlaca.getText());
+            c.setChassi(txtChassi.getText());//model carro
+
+            Hist_oficina ho = new Hist_oficina(); 
+            // .......... (pegar valores da tabela) model historico da oficina
+
+            CadUp cadup = new CadUp(); //view
+            cadup.setVisible(true);
+
+            this.setVisible(false);
+
+            CarrosController cc = new CarrosController();
+            cc.insert(c);//controller
         
-        this.setVisible(false);
-        
-        CarrosController cc = new CarrosController();
-        cc.insert(c);//controller
+        } catch(Exception e) {
+            //mostrar msg
+        }        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
