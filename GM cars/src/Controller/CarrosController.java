@@ -17,4 +17,12 @@ public class CarrosController {
         // inserir no banco de dados
     }
     
+    public void select(Carros c) {
+        // buscar no banco de dados
+    }
+    
+    public void update(Carros c) {
+        // editar no banco de dados
+    }
+    
 }

@@ -7,6 +7,7 @@ package view.locadora.edit;
 
 import javax.swing.JOptionPane;
 import view.locadora.avisos.CadDel;
+import view.locadora.avisos.CadUp;
 import view.locadora.telas.TelaInicialGer;
 
 /**
@@ -446,10 +447,10 @@ public class EditOrc extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Você deseja mesmo apagar esse cadastro?", "Apagar", JOptionPane.QUESTION_MESSAGE);
+        //JOptionPane.showMessageDialog(this, "Você deseja mesmo apagar esse cadastro?", "Apagar", JOptionPane.QUESTION_MESSAGE);
         
-        CadDel caddel = new CadDel();
-        caddel.setVisible(true);
+        CadUp cadup = new CadUp();
+        cadup.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 

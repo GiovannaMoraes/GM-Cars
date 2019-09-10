@@ -12,7 +12,7 @@ import java.util.Date;
  * @author aluno
  */
 public class Orcamentos {
-    private int id_orcamento, id_cliente, id_carro;
+    private int id_orcamento, id_cliente, id_carro, total_diarias;
     private String status;
     private Date data_inicio, data_termino;
     private Float valor_diaria, valor_total;
@@ -78,6 +78,15 @@ public class Orcamentos {
     
     public Date getData_termino() {
         return this.data_termino;
+    }
+    
+    public void setTotal_diarias(int _totald) throws Exception {
+
+            this.total_diarias= _totald; 
+    }
+    
+    public int getTotal_diarias() {
+        return this.total_diarias;
     }
     
     public void setValor_diaria(Float _vd) {

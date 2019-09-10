@@ -6,6 +6,7 @@
 package view.locadora.create;
 
 import Controller.ClientesController;
+import Controller.Clientes_TelefonesController;
 import Model.Clientes;
 import Model.Clientes_telefones;
 import view.locadora.avisos.CadUp;
@@ -168,10 +169,11 @@ public class CreateCli extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNumerotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumerotelefone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -386,32 +388,35 @@ public class CreateCli extends javax.swing.JFrame {
         
         try {
                   
-        Clientes cli = new Clientes();
-        Clientes_telefones cli_t = new Clientes_telefones();
-        cli.setNome(txtNome.getText());
-        cli.setRg(txtNome.getText());
-        cli.setCpf(txtNome.getText());
-        cli.setCnh(txtNome.getText());
-        cli.setDatanascimento(txtDatanascimento.getText());
-        cli_t.setDdd(txtDdd.getText());
-        cli_t.setNumero(txtNumerotelefone.getText()); 
-        cli.setRua(txtRua.getText());
-        cli.setNumero(Integer.parseInt(txtNumero.getText())); //conversão de string para int
-        cli.setBairro(txtBairro.getText());
-        cli.setCidade(txtCidade.getText());
-        cli.setEstado(txtEstado.getText());
-        cli.setCep(txtCep.getText()); //model
+            Clientes cli = new Clientes();
+            Clientes_telefones cli_t = new Clientes_telefones();
+            cli.setNome(txtNome.getText());
+            cli.setRg(txtRg.getText());
+            cli.setCpf(txtCpf.getText());
+            cli.setCnh(txtCnh.getText());
+            cli.setDatanascimento(txtDatanascimento.getText());
+            cli_t.setDdd(txtDdd.getText());
+            cli_t.setNumero(txtNumerotelefone.getText()); 
+            cli.setRua(txtRua.getText());
+            cli.setNumero(Integer.parseInt(txtNumero.getText())); //conversão de string para int
+            cli.setBairro(txtBairro.getText());
+            cli.setCidade(txtCidade.getText());
+            cli.setEstado(txtEstado.getText());
+            cli.setCep(txtCep.getText()); //model
         
         
         
         
-        CadUp cadup = new CadUp();
-        cadup.setVisible(true);
+            CadUp cadup = new CadUp();
+            cadup.setVisible(true);
+            this.setVisible(false); //view
         
-        this.setVisible(false); //view
         
-        ClientesController clic = new ClientesController();
-        clic.insert(cli);//controller
+            ClientesController clic = new ClientesController();
+            clic.insert(cli);
+
+            Clientes_TelefonesController cli_t_c = new Clientes_TelefonesController();
+            cli_t_c.insert(cli_t);//controller
         
         } catch (Exception e){
             

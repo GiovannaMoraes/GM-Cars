@@ -150,22 +150,9 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Login l = new Login(); //model
-        TelaInicialGer telager = new TelaInicialGer(); //view
-        LoginController lc = new LoginController();// controller
-        
-        
-        String usuario = txtUsuario.getText(); 
-        String senha = txtSenha.getText();
-               
-        
-        if ( "1234".equals(usuario) && "1234".equals(senha) ) {
-            telager.setVisible(true);
-            this.setVisible(false);
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Usuário ou senha inválido(s)", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        TelaInicialGer telager = new TelaInicialGer();
+        telager.setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed

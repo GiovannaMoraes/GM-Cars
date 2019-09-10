@@ -15,6 +15,14 @@ public class FuncionariosController {
     
     public void insert(Funcionarios f) {
         // inserir no banco de dados
+   
+    }
+
+    public void update(Funcionarios f) {
+        // inserir no banco de dados
     }
     
+    public void select(Funcionarios f) {
+        // inserir no banco de dados
+    }
 }

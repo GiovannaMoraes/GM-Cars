@@ -17,4 +17,12 @@ public class ClientesController {
         // inserir no banco de dados
     }
     
+    public void update(Clientes cli) {
+        // inserir no banco de dados
+    }
+    
+    public void select(Clientes cli) {
+        // inserir no banco de dados
+    }
+    
 }

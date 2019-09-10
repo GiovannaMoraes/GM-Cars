@@ -17,4 +17,12 @@ public class EntradaController {
         // inserir no banco de dados
     }
     
+    public void update(Entrada e) {
+        // inserir no banco de dados
+    }
+    
+    public void select(Entrada e) {
+        // inserir no banco de dados
+    }
+    
 }

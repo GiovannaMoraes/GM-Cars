@@ -17,4 +17,12 @@ public class SaidaController {
         // inserir no banco de dados
     }
     
+    public void update(Saida s) {
+        // inserir no banco de dados
+    }
+    
+    public void select(Saida s) {
+        // inserir no banco de dados
+    }
+    
 }

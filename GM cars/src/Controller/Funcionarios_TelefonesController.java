@@ -17,6 +17,14 @@ public class Funcionarios_TelefonesController {
         // inserir no banco de dados
     }
     
+    public void update(Funcionarios_telefones func_t) {
+        // inserir no banco de dados
+    }
+    
+    public void select(Funcionarios_telefones func_t) {
+        // inserir no banco de dados
+    }
+    
     
     
 }

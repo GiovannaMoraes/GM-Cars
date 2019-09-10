@@ -17,4 +17,13 @@ public class OrcamentosController {
         // inserir no banco de dados
     }
     
+    public void update(Orcamentos o) {
+        // inserir no banco de dados
+    }
+    
+    public void select(Orcamentos o) {
+        // inserir no banco de dados
+    }
+    
+    
 }
