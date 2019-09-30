@@ -16,6 +16,7 @@ public class Entrada {
     private int id_entrada, id_orcamento;
     private Date data;
     private Float valor;
+    private String horario;
     
     public void setId_entrada(int _i) throws Exception {
         
@@ -49,6 +50,14 @@ public class Entrada {
     
     public Date getData() {
         return this.data;
+    }
+    
+    public void setHorario(String _h) {
+            this.horario = _h;   
+    }
+    
+    public String getHorario() {
+        return this.horario;
     }
     
     public void setValor(Float _v) {

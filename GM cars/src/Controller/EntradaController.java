@@ -13,15 +13,15 @@ import Model.Entrada;
  */
 public class EntradaController {
     
-    public void insert(Entrada e) {
+    public void insert(Entrada ent) {
         // inserir no banco de dados
     }
     
-    public void update(Entrada e) {
+    public void update(Entrada ent) {
         // inserir no banco de dados
     }
     
-    public void select(Entrada e) {
+    public void select(Entrada ent) {
         // inserir no banco de dados
     }
     

@@ -14,7 +14,7 @@ import Model.Carros;
 public class CarrosController {
     
     public void insert(Carros c) {
-        // inserir no banco de dados
+        
     }
     
     public void select(Carros c) {

@@ -14,7 +14,7 @@ import java.util.Date;
 public class Saida {
     
     private int id_saida, id_funcionario;
-    private String motivo;
+    private String descricao, horario;
     private Date data;
     private Float valor;
     
@@ -44,12 +44,12 @@ public class Saida {
         return this.id_funcionario;
     }
     
-    public void setMotivo(String _m) {
-            this.motivo = _m;   
+    public void setDescricao(String _desc) {
+            this.descricao = _desc;   
     }
     
-    public String getMotivo() {
-        return this.motivo;
+    public String getDescricao() {
+        return this.descricao;
     }
     
     public void setData(Date _d) {
@@ -58,6 +58,14 @@ public class Saida {
     
     public Date getData() {
         return this.data;
+    }
+    
+    public void setHorario(String _horario) {
+            this.horario = _horario;   
+    }
+    
+    public String getHorario() {
+        return this.horario;
     }
     
     public void setValor(Float _v) {

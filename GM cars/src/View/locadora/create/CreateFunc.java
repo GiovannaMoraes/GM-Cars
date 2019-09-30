@@ -6,9 +6,9 @@
 package view.locadora.create;
 
 import Controller.FuncionariosController;
-import Controller.Funcionarios_TelefonesController;
 import Model.Funcionarios;
-import Model.Funcionarios_telefones;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import view.locadora.avisos.CadUp;
 import view.locadora.telas.TelaInicialGer;
 
@@ -52,28 +52,17 @@ public class CreateFunc extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtCargo = new javax.swing.JComboBox<>();
         txtDdd = new javax.swing.JTextField();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
-        txtRegistrocarteira = new javax.swing.JTextField();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
-        jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabela_dependentes = new javax.swing.JTable();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jLabel10 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jComboBox3 = new javax.swing.JComboBox();
+        txtEmergenciaTiposangue = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        txtEmergenciaNome = new javax.swing.JTextField();
+        txtEmergenciaRelacao = new javax.swing.JTextField();
+        txtEmergenciaDdd = new javax.swing.JTextField();
+        txtEmergenciaNumerotelefone = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         txtRua = new javax.swing.JTextField();
@@ -216,121 +205,9 @@ public class CreateFunc extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Funcionário", jPanel1);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Período", "Empresa", "Cargo"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jLabel12.setText("Registro na carteira");
-
-        jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(txtRegistrocarteira, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(txtRegistrocarteira, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtRegistrocarteira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Histórico", jLayeredPane1);
-
-        jLabel11.setText("Número de dependentes");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-
-        tabela_dependentes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Relação", "Nome", "Data de nasc."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tabela_dependentes);
-
-        jLayeredPane2.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
-        jLayeredPane2.setLayout(jLayeredPane2Layout);
-        jLayeredPane2Layout.setHorizontalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11)
-                .addGap(36, 36, 36)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(214, Short.MAX_VALUE))
-            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                    .addGap(9, 9, 9)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        jLayeredPane2Layout.setVerticalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addContainerGap(153, Short.MAX_VALUE))
-            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                    .addGap(47, 47, 47)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(42, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane1.addTab("Dependentes", jLayeredPane2);
-
         jLabel10.setText("Tipo de sangue");
 
-        jCheckBox1.setText("Alergias");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "O+", "O-", "A", "B", "C" }));
+        txtEmergenciaTiposangue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "O+", "O-", "A", "B", "C" }));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("Contato de emergência:");
@@ -341,29 +218,34 @@ public class CreateFunc extends javax.swing.JFrame {
 
         jLabel16.setText("Telefone");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        txtEmergenciaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                txtEmergenciaNomeActionPerformed(evt);
             }
         });
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        txtEmergenciaDdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                txtEmergenciaDddActionPerformed(evt);
+            }
+        });
+
+        txtEmergenciaNumerotelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmergenciaNumerotelefoneActionPerformed(evt);
             }
         });
 
         jLayeredPane3.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jCheckBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jComboBox3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(txtEmergenciaTiposangue, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(txtEmergenciaNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(txtEmergenciaRelacao, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(txtEmergenciaDdd, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(txtEmergenciaNumerotelefone, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
         jLayeredPane3.setLayout(jLayeredPane3Layout);
@@ -375,24 +257,25 @@ public class CreateFunc extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jLayeredPane3Layout.createSequentialGroup()
                         .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(48, 48, 48)
-                                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel14)
+                            .addComponent(txtEmergenciaNome)
                             .addGroup(jLayeredPane3Layout.createSequentialGroup()
                                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(30, 30, 30)
-                                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jTextField9))
+                                    .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtEmergenciaTiposangue, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel14)
+                                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                        .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel15)
+                                            .addComponent(txtEmergenciaRelacao, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(30, 30, 30)
+                                        .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16)
+                                            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                                .addComponent(txtEmergenciaDdd, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtEmergenciaNumerotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(4, 4, 4)))
                         .addGap(0, 100, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -400,27 +283,25 @@ public class CreateFunc extends javax.swing.JFrame {
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jCheckBox1))
+                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtEmergenciaTiposangue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmergenciaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtEmergenciaNumerotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmergenciaDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmergenciaRelacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -537,7 +418,7 @@ public class CreateFunc extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
@@ -574,23 +455,28 @@ public class CreateFunc extends javax.swing.JFrame {
         try {
             
         Funcionarios f = new Funcionarios();
-        Funcionarios_telefones func_t = new Funcionarios_telefones();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+        Date datanascimento = formato.parse(txtDatanascimento.getText());
 
         f.setNome(txtNome.getText());
         f.setFormacao(txtFormacao.getText());
-        f.setDatanascimento(txtDatanascimento.getText());
+        f.setDatanascimento(datanascimento);
         f.setCargo(txtCargo.getSelectedItem().toString());
-        func_t.setDdd(txtDdd.getText());
-        func_t.setNumero(txtNumerotelefone.getText());
+        f.setDdd(txtDdd.getText());
+        f.setNumerotelefone(txtNumerotelefone.getText());
         f.setCpf(txtCpf.getText());
         f.setRg(txtRg.getText());
-        f.setRua(txtRua.getText());//model
+        f.setRua(txtRua.getText());
         f.setBairro(txtBairro.getText());    
         f.setCidade(txtCidade.getText());
         f.setEstado(txtEstado.getText());
         f.setCep(txtCep.getText());
         f.setNumero(Integer.parseInt(txtNumero.getText()));
-        f.setRua(txtNome.getText());
+        f.setTiposangue(txtEmergenciaTiposangue.getSelectedItem().toString());
+        f.setEmergenciaNome(txtEmergenciaNome.getText());
+        f.setEmergenciaRelacao(txtEmergenciaRelacao.getText());
+        f.setEmergenciaDdd(txtEmergenciaDdd.getText());
+        f.setEmergenciaTelefone(txtEmergenciaNumerotelefone.getText());//model
         
         
         CadUp cadup = new CadUp();
@@ -598,11 +484,9 @@ public class CreateFunc extends javax.swing.JFrame {
         
         this.setVisible(false); //view
         
-        FuncionariosController func = new FuncionariosController();
-        func.insert(f);
-
-        Funcionarios_TelefonesController func_t_c = new Funcionarios_TelefonesController();
-        func_t_c.insert(func_t);//controller
+        FuncionariosController func_c = new FuncionariosController();
+        func_c.insert(f);//controller
+        
         } catch (Exception e) {
             
         }
@@ -618,13 +502,9 @@ public class CreateFunc extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCargoActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void txtEmergenciaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmergenciaNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_txtEmergenciaNomeActionPerformed
 
     private void txtDddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDddActionPerformed
         // TODO add your handling code here:
@@ -633,6 +513,14 @@ public class CreateFunc extends javax.swing.JFrame {
     private void txtNumerotelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumerotelefoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumerotelefoneActionPerformed
+
+    private void txtEmergenciaDddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmergenciaDddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmergenciaDddActionPerformed
+
+    private void txtEmergenciaNumerotelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmergenciaNumerotelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmergenciaNumerotelefoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -672,14 +560,9 @@ public class CreateFunc extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -697,20 +580,10 @@ public class CreateFunc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JTable tabela_dependentes;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JComboBox<String> txtCargo;
     private javax.swing.JTextField txtCep;
@@ -718,12 +591,16 @@ public class CreateFunc extends javax.swing.JFrame {
     private javax.swing.JTextField txtCpf;
     private javax.swing.JFormattedTextField txtDatanascimento;
     private javax.swing.JTextField txtDdd;
+    private javax.swing.JTextField txtEmergenciaDdd;
+    private javax.swing.JTextField txtEmergenciaNome;
+    private javax.swing.JTextField txtEmergenciaNumerotelefone;
+    private javax.swing.JTextField txtEmergenciaRelacao;
+    private javax.swing.JComboBox txtEmergenciaTiposangue;
     private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtFormacao;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtNumerotelefone;
-    private javax.swing.JTextField txtRegistrocarteira;
     private javax.swing.JTextField txtRg;
     private javax.swing.JTextField txtRua;
     // End of variables declaration//GEN-END:variables

@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author aluno
@@ -12,7 +14,8 @@ package Model;
 public class Clientes {
     
     private int id_cliente, numero;
-    private String nome, datanascimento, cpf, rg, cnh, rua, bairro, cidade, estado, cep ;
+    private String nome, cpf, rg, cnh, rua, bairro, cidade, estado, cep, ddd, numerotelefone;
+    private Date datanascimento;
     
     public void setId_cliente(int _i) throws Exception {
         
@@ -35,11 +38,11 @@ public class Clientes {
         return this.nome;
     }
     
-    public void setDatanascimento(String _datanasc) {
+    public void setDatanascimento(Date _datanasc) {
             this.datanascimento = _datanasc;   
     }
     
-    public String getDatanascimento() {
+    public Date getDatanascimento() {
         return this.datanascimento;
     }
     
@@ -113,5 +116,21 @@ public class Clientes {
     
     public String getCep() {
         return this.cep;
+    }
+    
+    public void setDdd(String _ddd) {
+            this.ddd = _ddd;   
+    }
+    
+    public String getDdd() {
+        return this.ddd;
+    }
+    
+    public void setNumerotelefone(String _numtel) {
+            this.numerotelefone = _numtel;   
+    }
+    
+    public String getNumerotelefone() {
+        return this.numerotelefone;
     }
 }

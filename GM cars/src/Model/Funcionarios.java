@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author aluno
@@ -12,7 +14,8 @@ package Model;
 public class Funcionarios {
     
     private int id_funcionario, numero;
-    private String nome, cargo, cpf, rg, rua, bairro, cidade, estado, cep, datanascimento, formacao ;
+    private String nome, cargo, cpf, rg, rua, bairro, cidade, estado, cep, formacao, ddd, numerotelefone, tiposangue, emergencianome, emergenciarelacao, emergenciaddd, emergenciatelefone;
+    private Date datanascimento;
     
     public void setId_funcionario(int _i) throws Exception {
         
@@ -35,11 +38,11 @@ public class Funcionarios {
         return this.nome;
     }
     
-    public void setDatanascimento(String _datanasc) {
+    public void setDatanascimento(Date _datanasc) {
             this.datanascimento = _datanasc;   
     }
     
-    public String getDatanascimento() {
+    public Date getDatanascimento() {
         return this.datanascimento;
     }
     
@@ -123,4 +126,59 @@ public class Funcionarios {
         return this.cep;
     }
     
+    public void setDdd(String _ddd) {
+            this.ddd = _ddd;   
+    }
+    
+    public String getDdd() {
+        return this.ddd;
+    }
+    
+    public void setNumerotelefone(String _numtel) {
+            this.numerotelefone = _numtel;   
+    }
+    
+    public String getNumerotelefone() {
+        return this.numerotelefone;
+    }
+    
+    public void setTiposangue(String _tiposangue) {
+            this.tiposangue = _tiposangue;   
+    }
+    
+    public String getTiposangue() {
+        return this.tiposangue;
+    }
+    
+    public void setEmergenciaNome(String _emergencia_n) {
+            this.emergencianome = _emergencia_n;   
+    }
+    
+    public String getEmergenciaNome() {
+        return this.emergencianome;
+    }
+    
+    public void setEmergenciaRelacao(String _emergencia_r) {
+            this.emergenciarelacao = _emergencia_r;   
+    }
+    
+    public String getEmergenciaRelacao() {
+        return this.emergenciarelacao;
+    }
+    
+    public void setEmergenciaDdd(String _emergencia_ddd) {
+            this.emergenciaddd = _emergencia_ddd;   
+    }
+    
+    public String getEmergenciaDdd() {
+        return this.emergenciaddd;
+    }
+    
+    public void setEmergenciaTelefone(String _emergencia_tel) {
+            this.emergenciatelefone = _emergencia_tel;   
+    }
+    
+    public String getEmergenciaTelefone() {
+        return this.emergenciatelefone;
+    }
 }

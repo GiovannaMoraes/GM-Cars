@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/ClientesController.java</file>
+            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Model/Funcionarios.java</file>
             <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/View/locadora/edit/EditCli.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/LoginController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/EntradaController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/OrcamentosController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/Funcionarios_TelefonesController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/Clientes_TelefonesController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/FuncionariosController.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/View/locadora/create/CreateCli.java</file>
-            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/Controller/SaidaController.java</file>
+            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/View/locadora/edit/EditFunc.java</file>
+            <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/View/locadora/create/CreateFunc.java</file>
             <file>file:/D:/2019/LPOO/2°%20semestre/Proj%20GM%20cars/GM%20cars/src/View/locadora/edit/EditCar.java</file>
         </group>
     </open-files>

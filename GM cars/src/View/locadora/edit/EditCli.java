@@ -6,9 +6,9 @@
 package view.locadora.edit;
 
 import Controller.ClientesController;
-import Controller.Clientes_TelefonesController;
 import Model.Clientes;
-import Model.Clientes_telefones;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import view.locadora.avisos.CadDel;
 import view.locadora.avisos.CadUp;
@@ -410,51 +410,45 @@ public class EditCli extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        CadUp cadup = new CadUp();
-        cadup.setVisible(true);
-        
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        //JOptionPane.showMessageDialog(this, "Você deseja mesmo apagar esse cadastro?", "Apagar", JOptionPane.QUESTION_MESSAGE);
-        
         try {
                   
             Clientes cli = new Clientes();
-            Clientes_telefones cli_t = new Clientes_telefones();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+            Date datanascimento = formato.parse(txtDatanascimento.getText());
+            
             cli.setNome(txtNome.getText());
             cli.setRg(txtRg.getText());
             cli.setCpf(txtCpf.getText());
             cli.setCnh(txtCnh.getText());
-            cli.setDatanascimento(txtDatanascimento.getText());
-            cli_t.setDdd(txtDdd.getText());
-            cli_t.setNumero(txtNumerotelefone.getText()); 
+            cli.setDatanascimento(datanascimento);
+            cli.setDdd(txtDdd.getText());
+            cli.setNumerotelefone(txtNumerotelefone.getText()); 
             cli.setRua(txtRua.getText());
             cli.setNumero(Integer.parseInt(txtNumero.getText())); //conversão de string para int
             cli.setBairro(txtBairro.getText());
             cli.setCidade(txtCidade.getText());
             cli.setEstado(txtEstado.getText());
             cli.setCep(txtCep.getText()); //model
-        
-        
-        
+            
         
             CadUp cadup = new CadUp();
             cadup.setVisible(true);
             this.setVisible(false); //view
         
         
-            ClientesController clic = new ClientesController();
-            clic.update(cli);
-
-            Clientes_TelefonesController cli_t_c = new Clientes_TelefonesController();
-            cli_t_c.update(cli_t);//controller
+            ClientesController cli_c = new ClientesController();
+            cli_c.insert(cli);//controller
         
         } catch (Exception e){
             
         }
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(this, "Você deseja mesmo apagar esse cadastro?", "Apagar", JOptionPane.QUESTION_MESSAGE);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

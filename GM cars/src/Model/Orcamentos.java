@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Orcamentos {
     private int id_orcamento, id_cliente, id_carro, total_diarias;
-    private String status;
+    private String status, formapagamento;
     private Date data_inicio, data_termino;
     private Float valor_diaria, valor_total;
     
@@ -103,5 +103,13 @@ public class Orcamentos {
     
     public Float getValor_total() {
         return this.valor_total;
+    }
+    
+    public void setFormapagamento(String _formap) {
+            this.formapagamento = _formap;   
+    }
+    
+    public String getFormapagamento() {
+        return this.formapagamento;
     }
 }

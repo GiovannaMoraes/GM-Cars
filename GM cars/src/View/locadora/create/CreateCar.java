@@ -6,8 +6,11 @@
 package view.locadora.create;
 
 import Controller.CarrosController;
+import Controller.Hist_OficinaController;
 import Model.Carros;
 import Model.Hist_oficina;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import view.locadora.avisos.CadUp;
 import view.locadora.telas.TelaInicialGer;
 
@@ -33,6 +36,8 @@ public class CreateCar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -57,10 +62,29 @@ public class CreateCar extends javax.swing.JFrame {
         txtPlaca = new javax.swing.JTextField();
         panel2 = new java.awt.Panel();
         jLabel17 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        txtOficinaData = new javax.swing.JTextField();
+        txtOficinaEmpresa = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtOficinaConserto = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txtOficinaValor = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jButton3 = new javax.swing.JButton();
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Data", "Ofinica", "Conserto", "Valor"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,18 +232,13 @@ public class CreateCar extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Oficina");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Data", "Ofinica", "Conserto", "Valor"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        jLabel15.setText("Data");
+
+        jLabel19.setText("Empresa");
+
+        jLabel20.setText("Conserto");
+
+        jLabel21.setText("Valor");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -229,18 +248,53 @@ public class CreateCar extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(txtOficinaData, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(txtOficinaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(txtOficinaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(txtOficinaValor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel17)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOficinaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOficinaData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOficinaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOficinaValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
+
+        jLabel15.getAccessibleContext().setAccessibleName("Data");
 
         jTabbedPane1.addTab("Histórico", panel2);
 
@@ -314,15 +368,23 @@ public class CreateCar extends javax.swing.JFrame {
             c.setChassi(txtChassi.getText());//model carro
 
             Hist_oficina ho = new Hist_oficina(); 
-            // .......... (pegar valores da tabela) model historico da oficina
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //pega data em forma de texto e transforma em formato de data
+            Date data = formato.parse(txtOficinaData.getText()); //coloca a data em formato de data dentro da var 
+            ho.setData(data);
+            ho.setEmpresa(txtOficinaEmpresa.getText());
+            ho.setConserto(txtOficinaConserto.getText());
+            ho.setValor(Float.parseFloat(txtOficinaValor.getText()));//model hist_oficina
 
-            CadUp cadup = new CadUp(); //view
+            CadUp cadup = new CadUp();
             cadup.setVisible(true);
 
-            this.setVisible(false);
+            this.setVisible(false); //view
 
             CarrosController cc = new CarrosController();
             cc.insert(c);//controller
+            
+            Hist_OficinaController ho_c = new Hist_OficinaController();
+            ho_c.insert(ho);
         
         } catch(Exception e) {
             //mostrar msg
@@ -382,9 +444,13 @@ public class CreateCar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
@@ -400,6 +466,10 @@ public class CreateCar extends javax.swing.JFrame {
     private javax.swing.JTextField txtCor;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
+    private javax.swing.JTextField txtOficinaConserto;
+    private javax.swing.JTextField txtOficinaData;
+    private javax.swing.JTextField txtOficinaEmpresa;
+    private javax.swing.JTextField txtOficinaValor;
     private javax.swing.JTextField txtPlaca;
     // End of variables declaration//GEN-END:variables
 }

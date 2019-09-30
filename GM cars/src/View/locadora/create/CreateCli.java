@@ -6,9 +6,9 @@
 package view.locadora.create;
 
 import Controller.ClientesController;
-import Controller.Clientes_TelefonesController;
 import Model.Clientes;
-import Model.Clientes_telefones;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import view.locadora.avisos.CadUp;
 import view.locadora.telas.TelaInicialGer;
 
@@ -389,34 +389,31 @@ public class CreateCli extends javax.swing.JFrame {
         try {
                   
             Clientes cli = new Clientes();
-            Clientes_telefones cli_t = new Clientes_telefones();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+            Date datanascimento = formato.parse(txtDatanascimento.getText());
+            
             cli.setNome(txtNome.getText());
             cli.setRg(txtRg.getText());
             cli.setCpf(txtCpf.getText());
             cli.setCnh(txtCnh.getText());
-            cli.setDatanascimento(txtDatanascimento.getText());
-            cli_t.setDdd(txtDdd.getText());
-            cli_t.setNumero(txtNumerotelefone.getText()); 
+            cli.setDatanascimento(datanascimento);
+            cli.setDdd(txtDdd.getText());
+            cli.setNumerotelefone(txtNumerotelefone.getText()); 
             cli.setRua(txtRua.getText());
             cli.setNumero(Integer.parseInt(txtNumero.getText())); //conversão de string para int
             cli.setBairro(txtBairro.getText());
             cli.setCidade(txtCidade.getText());
             cli.setEstado(txtEstado.getText());
             cli.setCep(txtCep.getText()); //model
-        
-        
-        
+            
         
             CadUp cadup = new CadUp();
             cadup.setVisible(true);
             this.setVisible(false); //view
         
         
-            ClientesController clic = new ClientesController();
-            clic.insert(cli);
-
-            Clientes_TelefonesController cli_t_c = new Clientes_TelefonesController();
-            cli_t_c.insert(cli_t);//controller
+            ClientesController cli_c = new ClientesController();
+            cli_c.insert(cli);//controller
         
         } catch (Exception e){
             
